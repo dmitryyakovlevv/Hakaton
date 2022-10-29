@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href={{url_for('static', filename='css/main.css')}}>
+    <script src="static/js/script.js" defer></script>
+    <script src="static/js/valid.js" defer></script>
+</head>
+<body>
+
+    <div class="shape">
+        <div class="liquid"></div>
+    </div>
+
+
+    <article class="container">
+        <div class="block">
+
+            <section class="block__item block-item">
+                <h2 class="block-item__title">Do you already have an account?</h2>
+                <button class="block-item__btn signin-btn">Log in</button>
+            </section>
+            <section class="block__item block-item">
+                <h2 class="block-item__title">You don't have an account?</h2>
+                <button class="block-item__btn signup-btn">Sign up</button>
+            </section>
+        </div>
+        <div class="form-box {{error_register_trigger}}">
+            <!--Форма регистрации-->
+            <form action="#" method="post" class="form form_signup">
+                <p>{{error_register}}</p>
+                <h3 class="form__title">Sign up for Free</h3>
+                <p>
+                    <input type="Fname" name="Fname_reg" class="form__input" id="Fname" placeholder="First name">
+                </p>
+                <p>
+                    <input type="Lname" name="Lname_reg" class="form__input" id="Lname" placeholder="Last name">
+                </p>
+                <p>
+                    <input type="email" name="email_reg" class="form__input" id="email" placeholder="Email address">
+                </p>
+                <p>
+                    <input type="password" name="password_reg" class="form__input" id="password" placeholder="Password">
+                </p>
+                <p>
+                    <input type="password" name="password_check_reg" class="form__input" placeholder="Confirm password">
+                </p>
+                <p>
+                    <button type="submit" class="form__btn">Register</button>
+                </p>
+            </form>
+                        <!--Форма входа-->
+            <form action="#" method="post" class="form form_signin">
+                <p>{{error_login}}</p>
+                <h3 class="form__title">Welcome Back!</h3>
+                <p>
+                    <input type="email" name="email_log" class="form__input" placeholder="Email address">
+                </p>
+                <p>
+                    <input type="password" name="password_log" class="form__input" placeholder="Password">
+                </p>
+                <p>
+                    <a href="#" class="form__forgot">Forgot Password?</a>
+                </p>
+                <p>
+                    <button type="submit" class="form__btn form__btn_login">Sign in</button>
+                </p>
+            </form>
+        </div>
+    </article>
+</body>
+</html>

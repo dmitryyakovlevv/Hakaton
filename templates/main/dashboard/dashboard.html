@@ -1,0 +1,32 @@
+{% extends 'main/main.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Dashboard</h1>
+
+
+
+
+
+<div class="container mt-5">
+    <h1>Все заметки:</h1>
+    <a class="btn btn-warning" href="/create_notes">+Создать</a>
+    {% if notes|length > 0 %}
+        {%for el in notes%}
+        <div class="alert alert-info">
+            <h2>{{el.title}}</h2>
+            <p>{{el.intro}}</p>
+            <p><b>Дата: {{el.date.date() }}</b></p>
+            <a href="/dashboard/{{ el.id }}/detail" class="btn btn-success">Показать полностью</a>
+            <a href="/dashboard/{{ el.id }}/update" class="btn btn-success">Редактировать</a>
+            <a href="/dashboard/{{ el.id }}/delete" class="btn btn-danger">Удалить</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>Еще нет заметок </p>
+    {% endif %}
+</div>
+{% endblock %}
